@@ -23,5 +23,15 @@
 - **Reqres API** (mock backend)
 
 ---
+## 📥 Installation
+
+Clone the repository:git clone https://github.com/Ajith163/auth-crud.git
+cd auth-crud
+npm install
+npm run dev
+
+## 🧪 Test Credentials
+Email: eve.holt@reqres.in
+Password: anything
 
 
