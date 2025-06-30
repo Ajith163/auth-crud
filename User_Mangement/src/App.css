@@ -1,0 +1,47 @@
+
+.user-card {
+  position: relative;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.user-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 0;
+}
+
+.user-card-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-card-mail {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.user-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.user-card:hover .user-card-overlay {
+  opacity: 1;
+}
