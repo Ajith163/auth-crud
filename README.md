@@ -26,7 +26,7 @@
 ## 📥 Installation
 
 Clone the repository:git clone https://github.com/Ajith163/auth-crud.git
-cd auth-crud
+cd User_Management
 npm install
 npm run dev
 
