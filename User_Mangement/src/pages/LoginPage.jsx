@@ -27,7 +27,7 @@ export default function LoginPage() {
       form.email !== 'eve.holt@reqres.in' ||
       form.password !== 'cityslicka'
     ) {
-      setLocalError('Only specific credentials are allowed.');
+      setLocalError('Inavalid credentials.');
       return;
     }
 
