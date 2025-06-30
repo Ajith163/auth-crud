@@ -14,12 +14,24 @@ export default function LoginPage() {
     password: 'cityslicka',
   });
 
+  const [localError, setLocalError] = useState('');
+
   useEffect(() => {
     if (token) navigate('/users', { replace: true });
   }, [token, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      form.email !== 'eve.holt@reqres.in' ||
+      form.password !== 'cityslicka'
+    ) {
+      setLocalError('Only specific credentials are allowed.');
+      return;
+    }
+
+    setLocalError('');
     dispatch(login(form));
   };
 
@@ -52,9 +64,20 @@ export default function LoginPage() {
           />
         </div>
 
-        {error && <div className="error" style={{ marginBottom: '1rem' }}>{error}</div>}
+        {(error || localError) && (
+          <div className="error" style={{ marginBottom: '1rem' }}>
+            {localError || error}
+          </div>
+        )}
 
-        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            marginBottom: '1.25rem',
+          }}
+        >
           <input type="checkbox" defaultChecked />
           Remember me
         </label>
